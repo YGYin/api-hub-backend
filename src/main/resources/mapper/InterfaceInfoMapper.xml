@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ygyin.apiplatform.mapper.InterfaceInfoMapper">
+
+    <resultMap id="BaseResultMap" type="com.ygyin.apiplatform.model.entity.InterfaceInfo">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="userId" column="userId" jdbcType="BIGINT"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
+            <result property="url" column="url" jdbcType="VARCHAR"/>
+            <result property="description" column="description" jdbcType="VARCHAR"/>
+            <result property="status" column="status" jdbcType="INTEGER"/>
+            <result property="reqParams" column="reqParams" jdbcType="VARCHAR"/>
+            <result property="reqHeader" column="reqHeader" jdbcType="VARCHAR"/>
+            <result property="respHeader" column="respHeader" jdbcType="VARCHAR"/>
+            <result property="method" column="method" jdbcType="VARCHAR"/>
+            <result property="createTime" column="createTime" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="updateTime" jdbcType="TIMESTAMP"/>
+            <result property="isDeleted" column="isDeleted" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,userId,name,
+        url,description,status,
+        reqParams,reqHeader,respHeader,method,
+        createTime,updateTime,isDeleted
+    </sql>
+</mapper>
