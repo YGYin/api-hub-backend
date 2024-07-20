@@ -1,7 +1,7 @@
 package com.ygyin.apiplatform.mapper;
 
-import com.ygyin.apiplatform.model.entity.UserApiInfo;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.ygyin.apiplatformcommon.model.entity.UserApiInfo;
 
 /**
 * @author yg

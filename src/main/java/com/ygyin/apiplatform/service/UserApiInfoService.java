@@ -1,8 +1,7 @@
 package com.ygyin.apiplatform.service;
 
-import com.ygyin.apiplatform.model.entity.InterfaceInfo;
-import com.ygyin.apiplatform.model.entity.UserApiInfo;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.ygyin.apiplatformcommon.model.entity.UserApiInfo;
 
 /**
  * @author yg
@@ -24,5 +23,5 @@ public interface UserApiInfoService extends IService<UserApiInfo> {
      * @param userId 调用接口的用户 id
      * @return
      */
-    boolean callNumCount(Long apiId, long userId);
+    boolean callNumCount(long apiId, long userId);
 }

@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ygyin.apiplatform.mapper.UserApiInfoMapper">
 
-    <resultMap id="BaseResultMap" type="com.ygyin.apiplatform.model.entity.UserApiInfo">
+    <resultMap id="BaseResultMap" type="com.ygyin.apiplatformcommon.model.entity.UserApiInfo">
             <id property="id" column="id" jdbcType="BIGINT"/>
             <result property="userId" column="userId" jdbcType="BIGINT"/>
             <result property="apiId" column="apiId" jdbcType="BIGINT"/>

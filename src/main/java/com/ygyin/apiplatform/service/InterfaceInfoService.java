@@ -1,7 +1,7 @@
 package com.ygyin.apiplatform.service;
 
-import com.ygyin.apiplatform.model.entity.InterfaceInfo;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.ygyin.apiplatformcommon.model.entity.InterfaceInfo;
 
 /**
 * @author yg

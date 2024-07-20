@@ -4,9 +4,9 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.ygyin.apiplatform.common.ErrorCode;
 import com.ygyin.apiplatform.exception.BusinessException;
 import com.ygyin.apiplatform.exception.ThrowUtils;
-import com.ygyin.apiplatform.model.entity.InterfaceInfo;
 import com.ygyin.apiplatform.service.InterfaceInfoService;
 import com.ygyin.apiplatform.mapper.InterfaceInfoMapper;
+import com.ygyin.apiplatformcommon.model.entity.InterfaceInfo;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 

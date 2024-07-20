@@ -15,7 +15,6 @@ import com.ygyin.apiplatform.model.dto.user.UserQueryRequest;
 import com.ygyin.apiplatform.model.dto.user.UserRegisterRequest;
 import com.ygyin.apiplatform.model.dto.user.UserUpdateMyRequest;
 import com.ygyin.apiplatform.model.dto.user.UserUpdateRequest;
-import com.ygyin.apiplatform.model.entity.User;
 import com.ygyin.apiplatform.model.vo.LoginUserVO;
 import com.ygyin.apiplatform.model.vo.UserVO;
 import com.ygyin.apiplatform.service.UserService;
@@ -24,6 +23,7 @@ import java.util.List;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import com.ygyin.apiplatformcommon.model.entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
