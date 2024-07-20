@@ -74,3 +74,13 @@ api:
   client:
     access-key: yygg
     secret-key: abcabc
+
+dubbo:
+  application:
+    name: dubbo-api-platform-provider
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    id: nacos-registry
+    address: nacos://localhost:8848
