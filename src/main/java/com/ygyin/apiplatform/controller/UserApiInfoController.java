@@ -28,7 +28,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
- * API 接口管理
+ * 用户调用 API 信息接口
  */
 @RestController
 @RequestMapping("/userApiInfo")
