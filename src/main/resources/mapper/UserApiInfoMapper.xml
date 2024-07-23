@@ -5,15 +5,15 @@
 <mapper namespace="com.ygyin.apiplatform.mapper.UserApiInfoMapper">
 
     <resultMap id="BaseResultMap" type="com.ygyin.apiplatformcommon.model.entity.UserApiInfo">
-            <id property="id" column="id" jdbcType="BIGINT"/>
-            <result property="userId" column="userId" jdbcType="BIGINT"/>
-            <result property="apiId" column="apiId" jdbcType="BIGINT"/>
-            <result property="remainNum" column="remainNum" jdbcType="INTEGER"/>
-            <result property="totalNum" column="totalNum" jdbcType="INTEGER"/>
-            <result property="status" column="status" jdbcType="INTEGER"/>
-            <result property="createTime" column="createTime" jdbcType="TIMESTAMP"/>
-            <result property="updateTime" column="updateTime" jdbcType="TIMESTAMP"/>
-            <result property="isDeleted" column="isDeleted" jdbcType="TINYINT"/>
+        <id property="id" column="id" jdbcType="BIGINT"/>
+        <result property="userId" column="userId" jdbcType="BIGINT"/>
+        <result property="apiId" column="apiId" jdbcType="BIGINT"/>
+        <result property="remainNum" column="remainNum" jdbcType="INTEGER"/>
+        <result property="totalNum" column="totalNum" jdbcType="INTEGER"/>
+        <result property="status" column="status" jdbcType="INTEGER"/>
+        <result property="createTime" column="createTime" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="updateTime" jdbcType="TIMESTAMP"/>
+        <result property="isDeleted" column="isDeleted" jdbcType="TINYINT"/>
     </resultMap>
 
     <sql id="Base_Column_List">
@@ -21,4 +21,11 @@
         remainNum,totalNum,status,
         createTime,updateTime,isDeleted
     </sql>
+    <select id="listApiDescByCallNum" resultType="com.ygyin.apiplatformcommon.model.entity.UserApiInfo">
+        select apiId, sum(totalNum) as totalNum
+        from user_api_info
+        group by apiId
+        order by totalNum desc
+        limit #{topLimit};
+    </select>
 </mapper>
