@@ -288,7 +288,7 @@ public class InterfaceInfoController {
         long id = interfaceInfoCallRequest.getId();
         InterfaceInfo oldInterfaceInfo = interfaceInfoService.getById(id);
         ThrowUtils.throwIf(oldInterfaceInfo == null, ErrorCode.NOT_FOUND_ERROR);
-        ThrowUtils.throwIf(oldInterfaceInfo.getStatus() == InterfaceStatusEnum.INTERFACE_OFFLINE.getValue(), ErrorCode.SYSTEM_ERROR,"该接口未开启(未上线)");
+        ThrowUtils.throwIf(oldInterfaceInfo.getStatus() == InterfaceStatusEnum.INTERFACE_OFFLINE.getValue(), ErrorCode.SYSTEM_ERROR, "该接口未开启(未上线)");
 
         // 获取当前登录用户，以获得其 ak 和 sk
         User curUser = userService.getLoginUser(request);
@@ -296,13 +296,38 @@ public class InterfaceInfoController {
         String sk = curUser.getSecretKey();
         // 新建一个 ApiClient 来封装 ak sk
         ApiClient apiClient = new ApiClient(ak, sk);
+        // todo: 根据 apiId 来调用不同接口
+        /*
+            sample:
+            if (id = 2) {
+                String randomJoke = apiClient.getRandomJoke();
+                return ResultUtils.success(randomJoke);
+            }
+            else if ...
+            else {
+                调用下方的默认接口
+            }
+         */
         // 从接口调用请求中的用户请求参数，并将用户请求的参数转换为 model 对象
         String userReqParams = interfaceInfoCallRequest.getUserReqParams();
-        Gson gson = new Gson();
-        SampleModel model = gson.fromJson(userReqParams, SampleModel.class);
-        // 通过携带了当前用户 ak sk 的 ApiClient 调用对应接口，拿到返回信息
-        String sampleInfoByPost = apiClient.getSampleInfoByPost(model);
+        if (id == 2) {
+            String infoByGet = apiClient.getInfoByGet(userReqParams);
+            return ResultUtils.success(infoByGet);
+        } else if (id == 3) {
+            String res = "";
+            return ResultUtils.success(res);
+        } else if (id == 4) {
+            String res = "";
+            return ResultUtils.success(res);
+        } else {
+            Gson gson = new Gson();
+            SampleModel model = gson.fromJson(userReqParams, SampleModel.class);
+            // 通过携带了当前用户 ak sk 的 ApiClient 调用对应接口，拿到返回信息
+            String sampleInfoByPost = apiClient.getSampleInfoByPost(model);
 
-        return ResultUtils.success(sampleInfoByPost);
+            return ResultUtils.success(sampleInfoByPost);
+        }
+
+
     }
 }
