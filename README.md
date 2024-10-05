@@ -3,7 +3,7 @@
 API Hub 是基于 Spring Boot + Spring Cloud Gateway + Dubbo + Nacos 开发的 API 接口开放平台。用户可浏览并在线调用接口；管理员可在后台发布或下线接口，并可视化各接口的调用情况；同时提供了客户端 SDK 便于开发者接入并调用第三方接口。
 
 ### 项目架构
-![api.png](doc/image/api.png)
+![api_arch.png](doc/image/api_arch.png)
 
 ### **业务流程**
 ![api_flow.png](doc/image/api_flow.png)
